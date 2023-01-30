@@ -1,0 +1,166 @@
+{
+    "sourceFile": "lib/screen/login/loginScreen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 37,
+            "patches": [
+                {
+                    "date": 1675096373727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1675096379356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n-stf\n\\ No newline at end of file\n+class Lo extends StatefulWidget {\r\n+  const Lo({super.key});\r\n+\r\n+  @override\r\n+  State<Lo> createState() => _LoState();\r\n+}\r\n+\r\n+class _LoState extends State<Lo> {\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Container();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675096388441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n-class Lo extends StatefulWidget {\r\n-  const Lo({super.key});\r\n+import 'package:flutter/material.dart';\r\n \r\n+class LoginScreen extends StatefulWidget {\r\n+  const LoginScreen({super.key});\r\n+\r\n   @override\r\n-  State<Lo> createState() => _LoState();\r\n+  State<LoginScreen> createState() => _LoginScreenState();\r\n }\r\n \r\n-class _LoState extends State<Lo> {\r\n+class _LoginScreenState extends State<LoginScreen> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container();\r\n   }\r\n"
+                },
+                {
+                    "date": 1675096537894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return ;\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675096548740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:wear/wear.dart';\r\n \r\n class LoginScreen extends StatefulWidget {\r\n   const LoginScreen({super.key});\r\n \r\n@@ -9,7 +10,7 @@\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return ;\r\n+    return WatchShape(builder: ());\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675096554146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,45 @@\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return WatchShape(builder: ());\r\n+    return WatchShape(builder: (BuildContext context, WearShape shape, Widget? child) {\r\n+      return Scaffold(\r\n+        appBar: AppBar(\r\n+          title: const Center(\r\n+            child: Text('Login'),\r\n+          ),\r\n+        ),\r\n+        body: SingleChildScrollView(\r\n+          child: Padding(\r\n+            padding: const EdgeInsets.all(10),\r\n+            child: Column(\r\n+              children: [\r\n+                TextFormField(\r\n+                  keyboardType: TextInputType.emailAddress,\r\n+                  decoration: const InputDecoration(\r\n+                      labelText: 'Enter Email',\r\n+                      border: OutlineInputBorder()),\r\n+                ),\r\n+                const SizedBox(\r\n+                  height: 20,\r\n+                ),\r\n+                TextFormField(\r\n+                    keyboardType: TextInputType.visiblePassword,\r\n+                    decoration: const InputDecoration(\r\n+                        labelText: 'Enter Password',\r\n+                        border: OutlineInputBorder())),\r\n+                const SizedBox(\r\n+                  height: 10,\r\n+                ),\r\n+                ElevatedButton(\r\n+                  onPressed: () {},\r\n+                  child: const Text('Login'),\r\n+                ),\r\n+              ],\r\n+            ),\r\n+          ),\r\n+        ),\r\n+      );\r\n+    }\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675096571517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n                 ),\r\n               ],\r\n             ),\r\n           ),\r\n-        ),\r\n+        ),)\r\n       );\r\n     }\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675096577611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n                 ),\r\n               ],\r\n             ),\r\n           ),\r\n-        ),)\r\n+        ),\r\n       );\r\n     }\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675096582853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return WatchShape(builder: (BuildContext context, WearShape shape, Widget? child) {\r\n+    return WatchShape(\r\n+        builder: (BuildContext context, WearShape shape, Widget? child) {\r\n       return Scaffold(\r\n         appBar: AppBar(\r\n           title: const Center(\r\n             child: Text('Login'),\r\n@@ -25,10 +26,9 @@\n               children: [\r\n                 TextFormField(\r\n                   keyboardType: TextInputType.emailAddress,\r\n                   decoration: const InputDecoration(\r\n-                      labelText: 'Enter Email',\r\n-                      border: OutlineInputBorder()),\r\n+                      labelText: 'Enter Email', border: OutlineInputBorder()),\r\n                 ),\r\n                 const SizedBox(\r\n                   height: 20,\r\n                 ),\r\n@@ -48,7 +48,7 @@\n             ),\r\n           ),\r\n         ),\r\n       );\r\n-    }\r\n+    });\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1675097234394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,7 +48,9 @@\n             ),\r\n           ),\r\n         ),\r\n       );\r\n+    \r\n+    \r\n     });\r\n\\ No newline at end of file\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1675097283243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,49 +8,111 @@\n   State<LoginScreen> createState() => _LoginScreenState();\r\n }\r\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n+\r\n+  \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return WatchShape(\r\n         builder: (BuildContext context, WearShape shape, Widget? child) {\r\n       return Scaffold(\r\n-        appBar: AppBar(\r\n-          title: const Center(\r\n-            child: Text('Login'),\r\n-          ),\r\n-        ),\r\n-        body: SingleChildScrollView(\r\n-          child: Padding(\r\n-            padding: const EdgeInsets.all(10),\r\n-            child: Column(\r\n-              children: [\r\n-                TextFormField(\r\n-                  keyboardType: TextInputType.emailAddress,\r\n-                  decoration: const InputDecoration(\r\n-                      labelText: 'Enter Email', border: OutlineInputBorder()),\r\n+        body: SafeArea(\r\n+          child: Form(\r\n+            key: _formKey,\r\n+            child: Center(\r\n+              child: SingleChildScrollView(\r\n+                child: Padding(\r\n+                  padding: const EdgeInsets.all(8),\r\n+                  child: Column(\r\n+                    children: [\r\n+                      SvgPicture.asset(\r\n+                        'assets/svg/logo.svg',\r\n+                        height: 200,\r\n+                        width: 200,\r\n+                      ),\r\n+                      const SizedBox(height: 8),\r\n+                      TextFormField(\r\n+                        controller: _usernameController,\r\n+                        onSaved: (newValue) {\r\n+                          setState(() {\r\n+                            _usernameController.text = newValue!;\r\n+                          });\r\n+                        },\r\n+                        decoration: const InputDecoration(\r\n+                          labelText: 'Username',\r\n\\ No newline at end of file\n+                        ),\r\n+                        validator: (value) {\r\n+                          if (value!.isEmpty) {\r\n+                            return 'Please enter username';\r\n+                          }\r\n+                          return null;\r\n+                        },\r\n+                      ),\r\n+                      const SizedBox(\r\n+                        height: 8,\r\n+                      ),\r\n+                      TextFormField(\r\n+                        obscureText: true,\r\n+                        decoration: const InputDecoration(\r\n+                          border: OutlineInputBorder(),\r\n+                          labelText: 'Password',\r\n+                        ),\r\n+                        controller: _passwordController,\r\n+                        validator: (value) {\r\n+                          if (value!.isEmpty) {\r\n+                            return 'Please enter password';\r\n+                          }\r\n+                          return null;\r\n+                        },\r\n+                      ),\r\n+                      const SizedBox(height: 8),\r\n+                      ElevatedButton(\r\n+                        onPressed: () {\r\n+                          if (_formKey.currentState!.validate()) {\r\n+                            _loginUser();\r\n+                          }\r\n+                        },\r\n+                        child: const SizedBox(\r\n+                          height: 40,\r\n+                          child: Center(\r\n+                            child: Text(\r\n+                              'Login',\r\n+                              style: TextStyle(\r\n+                                fontSize: 18,\r\n+                                fontFamily: \"Brand Bold\",\r\n+                              ),\r\n+                            ),\r\n+                          ),\r\n+                        ),\r\n+                      ),\r\n+                      const SizedBox(height: 8),\r\n+                      ElevatedButton(\r\n+                        onPressed: () {\r\n+                          Navigator.pushNamed(context, RegisterScreen.route);\r\n+                        },\r\n+                        child: const SizedBox(\r\n+                          height: 40,\r\n+                          child: Center(\r\n+                            child: Text(\r\n+                              'Register',\r\n+                              style: TextStyle(\r\n+                                fontSize: 18,\r\n+                                fontFamily: \"Brand Bold\",\r\n+                              ),\r\n+                            ),\r\n+                          ),\r\n+                        ),\r\n+                      ),\r\n+                    ],\r\n+                  ),\r\n                 ),\r\n-                const SizedBox(\r\n-                  height: 20,\r\n-                ),\r\n-                TextFormField(\r\n-                    keyboardType: TextInputType.visiblePassword,\r\n-                    decoration: const InputDecoration(\r\n-                        labelText: 'Enter Password',\r\n-                        border: OutlineInputBorder())),\r\n-                const SizedBox(\r\n-                  height: 10,\r\n-                ),\r\n-                ElevatedButton(\r\n-                  onPressed: () {},\r\n-                  child: const Text('Login'),\r\n-                ),\r\n-              ],\r\n+              ),\r\n             ),\r\n           ),\r\n         ),\r\n       );\r\n+  \r\n     \r\n-    \r\n     });\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1675097298077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,13 @@\n }\r\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n \r\n-  \r\n+    final _formKey = GlobalKey<FormState>();\r\n+\r\n+  final _usernameController = TextEditingController(text: 'karma21');\r\n+  final _passwordController = TextEditingController(text: 'karmagrg');\r\n+\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return WatchShape(\r\n         builder: (BuildContext context, WearShape shape, Widget? child) {\r\n@@ -24,14 +28,8 @@\n                 child: Padding(\r\n                   padding: const EdgeInsets.all(8),\r\n                   child: Column(\r\n                     children: [\r\n-                      SvgPicture.asset(\r\n-                        'assets/svg/logo.svg',\r\n-                        height: 200,\r\n-                        width: 200,\r\n-                      ),\r\n-                      const SizedBox(height: 8),\r\n                       TextFormField(\r\n                         controller: _usernameController,\r\n                         onSaved: (newValue) {\r\n                           setState(() {\r\n@@ -114,5 +112,5 @@\n   \r\n     \r\n     });\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                },
+                {
+                    "date": 1675097307123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                       const SizedBox(height: 8),\r\n                       ElevatedButton(\r\n                         onPressed: () {\r\n                           if (_formKey.currentState!.validate()) {\r\n-                            _loginUser();\r\n+                            // _loginUser();\r\n                           }\r\n                         },\r\n                         child: const SizedBox(\r\n                           height: 40,\r\n"
+                },
+                {
+                    "date": 1675097316296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,10 +84,10 @@\n                         ),\r\n                       ),\r\n                       const SizedBox(height: 8),\r\n                       ElevatedButton(\r\n-                        onPressed: () {\r\n-                          Navigator.pushNamed(context, RegisterScreen.route);\r\n+                        onPressed: () { \r\n+                         Navigator.pushNamed(context, RegisterScreen.route);\r\n                         },\r\n                         child: const SizedBox(\r\n                           height: 40,\r\n                           child: Center(\r\n"
+                },
+                {
+                    "date": 1675097323869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,10 +84,10 @@\n                         ),\r\n                       ),\r\n                       const SizedBox(height: 8),\r\n                       ElevatedButton(\r\n-                        onPressed: () { \r\n-                         Navigator.pushNamed(context, RegisterScreen.route);\r\n+                        onPressed: () {\r\n+                          // Navigator.pushNamed(context, RegisterScreen.route);\r\n                         },\r\n                         child: const SizedBox(\r\n                           height: 40,\r\n                           child: Center(\r\n"
+                },
+                {
+                    "date": 1675097412784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,26 +82,9 @@\n                             ),\r\n                           ),\r\n                         ),\r\n                       ),\r\n-                      const SizedBox(height: 8),\r\n-                      ElevatedButton(\r\n-                        onPressed: () {\r\n-                          // Navigator.pushNamed(context, RegisterScreen.route);\r\n-                        },\r\n-                        child: const SizedBox(\r\n-                          height: 40,\r\n-                          child: Center(\r\n-                            child: Text(\r\n-                              'Register',\r\n-                              style: TextStyle(\r\n-                                fontSize: 18,\r\n-                                fontFamily: \"Brand Bold\",\r\n-                              ),\r\n-                            ),\r\n-                          ),\r\n-                        ),\r\n-                      ),\r\n+                      const SizedBox(height: 8)\r\n                     ],\r\n                   ),\r\n                 ),\r\n               ),\r\n"
+                },
+                {
+                    "date": 1675097418782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,8 @@\n                             ),\r\n                           ),\r\n                         ),\r\n                       ),\r\n-                      const SizedBox(height: 8)\r\n                     ],\r\n                   ),\r\n                 ),\r\n               ),\r\n"
+                },
+                {
+                    "date": 1675097432099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,10 @@\n   State<LoginScreen> createState() => _LoginScreenState();\r\n }\r\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n+  final _formKey = GlobalKey<FormState>();\r\n \r\n-    final _formKey = GlobalKey<FormState>();\r\n-\r\n   final _usernameController = TextEditingController(text: 'karma21');\r\n   final _passwordController = TextEditingController(text: 'karmagrg');\r\n \r\n   @override\r\n@@ -90,9 +89,7 @@\n             ),\r\n           ),\r\n         ),\r\n       );\r\n-  \r\n-    \r\n     });\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1675097660639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n   final _formKey = GlobalKey<FormState>();\r\n \r\n-  final _usernameController = TextEditingController(text: 'karma21');\r\n+  final _usernameController = TextEditingController();\r\n   final _passwordController = TextEditingController(text: 'karmagrg');\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n"
+                },
+                {
+                    "date": 1675097725606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n class _LoginScreenState extends State<LoginScreen> {\r\n   final _formKey = GlobalKey<FormState>();\r\n \r\n   final _usernameController = TextEditingController();\r\n-  final _passwordController = TextEditingController(text: 'karmagrg');\r\n+  final _passwordController = TextEditingController();\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return WatchShape(\r\n@@ -35,8 +35,9 @@\n                             _usernameController.text = newValue!;\r\n                           });\r\n                         },\r\n                         decoration: const InputDecoration(\r\n+                          \r\n                           labelText: 'Username',\r\n                         ),\r\n                         validator: (value) {\r\n                           if (value!.isEmpty) {\r\n"
+                },
+                {
+                    "date": 1675097754490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n   final _formKey = GlobalKey<FormState>();\r\n \r\n-  final _usernameController = TextEditingController();\r\n+  final _usernameController = TextEditingController(text: );\r\n   final _passwordController = TextEditingController();\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n@@ -35,9 +35,9 @@\n                             _usernameController.text = newValue!;\r\n                           });\r\n                         },\r\n                         decoration: const InputDecoration(\r\n-                          \r\n+                          border: OutlineInputBorder(),\r\n                           labelText: 'Username',\r\n                         ),\r\n                         validator: (value) {\r\n                           if (value!.isEmpty) {\r\n"
+                },
+                {
+                    "date": 1675097762258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n   final _formKey = GlobalKey<FormState>();\r\n \r\n-  final _usernameController = TextEditingController(text: );\r\n-  final _passwordController = TextEditingController();\r\n+  final _usernameController = TextEditingController(text: 'karma21');\r\n+  final _passwordController = TextEditingController(text: );\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return WatchShape(\r\n"
+                },
+                {
+                    "date": 1675097768740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n class _LoginScreenState extends State<LoginScreen> {\r\n   final _formKey = GlobalKey<FormState>();\r\n \r\n   final _usernameController = TextEditingController(text: 'karma21');\r\n-  final _passwordController = TextEditingController(text: );\r\n+  final _passwordController = TextEditingController(text: 'karmagrgS');\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return WatchShape(\r\n"
+                },
+                {
+                    "date": 1675097796347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,13 @@\n \r\n   final _usernameController = TextEditingController(text: 'karma21');\r\n   final _passwordController = TextEditingController(text: 'karmagrgS');\r\n \r\n+\r\n+\r\n+\r\n+\r\n+\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return WatchShape(\r\n         builder: (BuildContext context, WearShape shape, Widget? child) {\r\n"
+                },
+                {
+                    "date": 1675097802896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,13 +13,13 @@\n \r\n   final _usernameController = TextEditingController(text: 'karma21');\r\n   final _passwordController = TextEditingController(text: 'karmagrgS');\r\n \r\n+  _L\r\n \r\n \r\n \r\n \r\n-\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return WatchShape(\r\n         builder: (BuildContext context, WearShape shape, Widget? child) {\r\n"
+                },
+                {
+                    "date": 1675097816222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \r\n   final _usernameController = TextEditingController(text: 'karma21');\r\n   final _passwordController = TextEditingController(text: 'karmagrgS');\r\n \r\n-  _L\r\n+  _login()\r\n \r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1675097823208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,13 @@\n \r\n   final _usernameController = TextEditingController(text: 'karma21');\r\n   final _passwordController = TextEditingController(text: 'karmagrgS');\r\n \r\n-  _login()\r\n+  _login() async{\r\n+    try{\r\n+      \r\n+    }\r\n+  }\r\n \r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1675097829979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   final _passwordController = TextEditingController(text: 'karmagrgS');\r\n \r\n   _login() async{\r\n     try{\r\n-      \r\n+      UserRepo\r\n     }\r\n   }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1675097837578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   final _passwordController = TextEditingController(text: 'karmagrgS');\r\n \r\n   _login() async{\r\n     try{\r\n-      UserRepo\r\n+      UserRepository userRepository \r\n     }\r\n   }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1675097844838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   final _passwordController = TextEditingController(text: 'karmagrgS');\r\n \r\n   _login() async{\r\n     try{\r\n-      UserRepository userRepository \r\n+      UserRepository userRepository = UserRepo\r\n     }\r\n   }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1675097850683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   final _passwordController = TextEditingController(text: 'karmagrgS');\r\n \r\n   _login() async{\r\n     try{\r\n-      UserRepository userRepository = UserRepo\r\n+      UserRepository userRepository = UserRepository()}\r\n     }\r\n   }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1675097938580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,8 @@\n \r\n   final _usernameController = TextEditingController(text: 'karma21');\r\n   final _passwordController = TextEditingController(text: 'karmagrgS');\r\n \r\n-  _login() async{\r\n-    try{\r\n-      UserRepository userRepository = UserRepository()}\r\n-    }\r\n   }\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1675097943852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,14 +12,8 @@\n   final _formKey = GlobalKey<FormState>();\r\n \r\n   final _usernameController = TextEditingController(text: 'karma21');\r\n   final _passwordController = TextEditingController(text: 'karmagrgS');\r\n-\r\n-  }\r\n-\r\n-\r\n-\r\n-\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return WatchShape(\r\n         builder: (BuildContext context, WearShape shape, Widget? child) {\r\n"
+                },
+                {
+                    "date": 1675097980464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n class _LoginScreenState extends State<LoginScreen> {\r\n   final _formKey = GlobalKey<FormState>();\r\n \r\n   final _usernameController = TextEditingController(text: 'karma21');\r\n-  final _passwordController = TextEditingController(text: 'karmagrgS');\r\n+  final _passwordController = TextEditingController(text: 'karmagrg');\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return WatchShape(\r\n         builder: (BuildContext context, WearShape shape, Widget? child) {\r\n"
+                },
+                {
+                    "date": 1675098046315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n   final _formKey = GlobalKey<FormState>();\r\n \r\n   final _usernameController = TextEditingController(text: 'karma21');\r\n   final _passwordController = TextEditingController(text: 'karmagrg');\r\n+  \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return WatchShape(\r\n         builder: (BuildContext context, WearShape shape, Widget? child) {\r\n"
+                },
+                {
+                    "date": 1675098082569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   final _formKey = GlobalKey<FormState>();\r\n \r\n   final _usernameController = TextEditingController(text: 'karma21');\r\n   final _passwordController = TextEditingController(text: 'karmagrg');\r\n-  \r\n+\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return WatchShape(\r\n         builder: (BuildContext context, WearShape shape, Widget? child) {\r\n@@ -67,8 +67,9 @@\n                       ElevatedButton(\r\n                         onPressed: () {\r\n                           if (_formKey.currentState!.validate()) {\r\n                             // _loginUser();\r\n+                            \r\n                           }\r\n                         },\r\n                         child: const SizedBox(\r\n                           height: 40,\r\n"
+                },
+                {
+                    "date": 1675098087649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,13 @@\n                       ElevatedButton(\r\n                         onPressed: () {\r\n                           if (_formKey.currentState!.validate()) {\r\n                             // _loginUser();\r\n-                            \r\n+                            Navigator.of(context).push(\r\n+                              MaterialPageRoute(\r\n+                                builder: (_) => const DashboardScreen(),\r\n+                              ),\r\n+                            );\r\n                           }\r\n                         },\r\n                         child: const SizedBox(\r\n                           height: 40,\r\n"
+                },
+                {
+                    "date": 1675098153543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:notificationapp/screen/dashboard/dashboardScreen.dart';\r\n import 'package:wear/wear.dart';\r\n \r\n class LoginScreen extends StatefulWidget {\r\n   const LoginScreen({super.key});\r\n"
+                }
+            ],
+            "date": 1675096373727,
+            "name": "Commit-0",
+            "content": "stf"
+        }
+    ]
+}

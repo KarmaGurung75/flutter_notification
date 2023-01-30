@@ -1,0 +1,38 @@
+{
+    "sourceFile": "lib/screen/dashboard/dashboardScreen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1675098094870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1675098104779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n-st5\n\\ No newline at end of file\n+class name extends StatefulWidget {\r\n+  const name({super.key});\r\n+\r\n+  @override\r\n+  State<name> createState() => _nameState();\r\n+}\r\n+\r\n+class _nameState extends State<name> {\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Container();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675098111183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n-class name extends StatefulWidget {\r\n-  const name({super.key});\r\n+class DashboardScreen extends StatefulWidget {\r\n+  const DashboardScreen({super.key});\r\n \r\n   @override\r\n-  State<name> createState() => _nameState();\r\n+  State<DashboardScreen> createState() => _DashboardScreenState();\r\n }\r\n \r\n-class _nameState extends State<name> {\r\n+class _DashboardScreenState extends State<DashboardScreen> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container();\r\n   }\r\n"
+                },
+                {
+                    "date": 1675098127316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import 'package:flutter/material.dart';\r\n+\r\n class DashboardScreen extends StatefulWidget {\r\n   const DashboardScreen({super.key});\r\n \r\n   @override\r\n@@ -7,7 +9,7 @@\n \r\n class _DashboardScreenState extends State<DashboardScreen> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return s;\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675098134622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:wear/wear.dart';\r\n \r\n class DashboardScreen extends StatefulWidget {\r\n   const DashboardScreen({super.key});\r\n \r\n@@ -9,7 +10,7 @@\n \r\n class _DashboardScreenState extends State<DashboardScreen> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return s;\r\n+    return WatchShape(builder: ());\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1675098140529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,15 @@\n \r\n class _DashboardScreenState extends State<DashboardScreen> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return WatchShape(builder: ());\r\n+    return WatchShape(builder: (BuildContext context, WearShape shape, Widget? child) {\r\n+      return Scaffold(\r\n+        body: SafeArea(\r\n+          child: Center(\r\n+            child: Text('Dashboard'),\r\n+          ),\r\n+        ),\r\n+      );\r\n+    });\r\n   }\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1675098094870,
+            "name": "Commit-0",
+            "content": "st5"
+        }
+    ]
+}

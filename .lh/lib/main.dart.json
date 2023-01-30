@@ -1,0 +1,26 @@
+{
+    "sourceFile": "lib/main.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1675096907571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1675096914679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import 'package:awesome_notifications/awesome_notifications.dart';\r\n import 'package:flutter/material.dart';\r\n import 'package:notificationapp/screen/addition.dart';\r\n+import 'package:notificationapp/screen/login/loginScreen.dart';\r\n \r\n void main() {\r\n   AwesomeNotifications().initialize(\r\n     'resource://drawable/launcher',\r\n@@ -32,8 +33,8 @@\n       debugShowCheckedModeBanner: false,\r\n       theme: ThemeData(\r\n         primarySwatch: Colors.blue,\r\n       ),\r\n-      home: const (),\r\n+      home: const LoginScreen(),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1675096952825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,8 @@\n }\r\n \r\n class MyApp extends StatelessWidget {\r\n   const MyApp({super.key});\r\n-\r\n-  // This widget is the root of your application.\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return MaterialApp(\r\n       title: 'Flutter Demo',\r\n"
+                }
+            ],
+            "date": 1675096907571,
+            "name": "Commit-0",
+            "content": "import 'package:awesome_notifications/awesome_notifications.dart';\r\nimport 'package:flutter/material.dart';\r\nimport 'package:notificationapp/screen/addition.dart';\r\n\r\nvoid main() {\r\n  AwesomeNotifications().initialize(\r\n    'resource://drawable/launcher',\r\n    [\r\n      NotificationChannel(\r\n        channelGroupKey: 'basic_channel_group',\r\n        channelKey: 'basic_channel',\r\n        channelName: 'Basic notifications',\r\n        channelDescription: 'Notification channel for basic tests',\r\n        defaultColor: Colors.blueAccent,\r\n        importance: NotificationImportance.Max,\r\n        ledColor: Colors.lightGreen,\r\n        channelShowBadge: true,\r\n      ),\r\n    ],\r\n  );\r\n  runApp(const MyApp());\r\n}\r\n\r\nclass MyApp extends StatelessWidget {\r\n  const MyApp({super.key});\r\n\r\n  // This widget is the root of your application.\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return MaterialApp(\r\n      title: 'Flutter Demo',\r\n      debugShowCheckedModeBanner: false,\r\n      theme: ThemeData(\r\n        primarySwatch: Colors.blue,\r\n      ),\r\n      home: const (),\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}
